@@ -1,0 +1,26 @@
+This is a timeline of my progress on this project.
+
+February 5, 2022:
+  - This is my first log, so I'll have to catch up on everything I've done up to this point:
+  
+  1. I had to make sure I could get power to the raspberry pi and control the servo and motor PWMs:
+    I bought a buck converter for this to step the voltage down. 
+    You can power Raspberry Pis through the GPIO pins, but you bypass a lot of the safetly features you get through USB-C port, so instead I took the the cable I
+    got with my CanaKit Pi (which conveniently only had power and ground wires), extended it with some of the JST wires incase I would need little extra length,
+    and then connected that to the buck converter. My orignial plan was to power the pi through the 6V servo JST cable which is stepped down to 6V through the esc,
+    but I started to run into problems. Whenever I plugged in the Pi, the voltage would just drop to around 4.5 but it needs 5 (give or take 5%). I'm still not 100%
+    why this happened, but my guess is just that the BEC in the ESC limited the amps too much and it wasn't enough for the raspberry pi. So plan B: I
+    bought one of the cables usually used for running two batteries in parrallel for more power, and used that to run power through the buck converter and to the 
+    ESC at the same time. This works great, and it is probably a better setup anyways, because istead of powering the servo through the Pi's 5V pin, it will still
+    get its normal 6V.
+  
+  2. Now with the Pi powered, it was time for some programming! 
+    Hooking up the Pi to the servo and ESC was super easy because they used JST plugs like the raspberry Pi and they were already powered, just 2 cables (yay!). I 
+    am actually using a new raspberry Pi for this because I left my other one back at University (School went back online because of COVID). I had to set it up 
+    through my laptop and an ethernet cable which is actually pretty annoying, and I ran into some issues getting a VNC working, but luckily this internet is 
+    always there to help. Anyways, I started by making a program with the RPi library, as I have used in the past for GPIO control. To use keyboard controls
+    I used the pygame library. A little aside here: I've had trouble in the past using keyboard control over SSH, and I thought you needed to use an XServer
+    (usually Xming) to forward the keyboard controls, but this time I used a VNC, and have not needed to start Xming. With a quick search it seems that a VNC 
+    is essentially an X11 alternative and has a built-in Xorg server by default. Good to know! Anyways, once I set up a program with pygame and RPi, the servo
+    control was ok, but super twitchy, and when I tried to move the car, the throttle was so jumpy, it would draw too much voltage and actually turn off
+    the Raspberry Pi. If you look up any GPIO tutorial for a Raspberry Pi, chances are it will use the RPi library, and this is how I learned too.
