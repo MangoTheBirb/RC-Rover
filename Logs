@@ -23,4 +23,23 @@ February 5, 2022:
     (usually Xming) to forward the keyboard controls, but this time I used a VNC, and have not needed to start Xming. With a quick search it seems that a VNC 
     is essentially an X11 alternative and has a built-in Xorg server by default. Good to know! Anyways, once I set up a program with pygame and RPi, the servo
     control was ok, but super twitchy, and when I tried to move the car, the throttle was so jumpy, it would draw too much voltage and actually turn off
-    the Raspberry Pi. If you look up any GPIO tutorial for a Raspberry Pi, chances are it will use the RPi library, and this is how I learned too.
+    the Raspberry Pi. If you look up any GPIO tutorial for a Raspberry Pi, chances are it will use the RPi library, and this is how I learned too. The problem 
+    is that the RPi library is outdated, and pretty awful if you need any precision. I started using the pigpio library istead, and this has worked great, even
+    using software PWM. I could now control the car perfectly!
+    
+    3. Better mounting:
+      Up until this point I had everything sliding around freely on the car, so with the help of my friend who had some tools, we cut out a piece of plywood
+      to fit above the battery. I unscrewed the ESC mounting and the battery clip standoffs and was able to use those for mounting. From there I could mount 
+      all the electronics on the plywood. I will make a more final version of this with a thinner piece of wood, but this works great for now.
+      
+    4. Camera issues:
+      I had a lot of issues getting a camera stream working. I reimaged the Raspberry Pi (don't forget to save your files somewhere), and after that is was working fine!
+      It is an annoying process though, because you have to setup the Pi again.
+      
+      // I'll attach an image here soon.
+      
+ February 4, 2022 part 2 - Electric boogaloo:
+  - I made this a seperate entry because this happened just yesterday. After finally getting the camera working, I wanted to try driving the car with video. 
+  But back when I was mounting stuff onto the plywood and plugging everything back in, I accidentally plugged the power and ground that connect the sevo 
+  to power in reverse. So when I turned the ESC on it burnt, so now I can't drive the car. Luckily the servo was fine, but the Traxxas XL5 ESCs are expensive. What an 
+  annoying mistake. And burnt electronics smell awful.
