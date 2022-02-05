@@ -5,6 +5,7 @@ February 5, 2022:
       <li>
       This is my first log, so I'll have to catch up on everything I've done up to this point:
       </li>
+<ul>
 <ol>
       <li>
       I had to make sure I could get power to the raspberry pi and control the servo and motor PWMs: 
