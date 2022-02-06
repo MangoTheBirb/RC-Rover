@@ -31,7 +31,7 @@ I had a lot of issues getting a camera stream working. I reimaged the Raspberry 
       
       // I'll attach an image here soon.
       
-<h2>February 5, 2022, part 2 - Electric boogaloo:<h2>
+<h2>February 5, 2022, part 2 - Electric boogaloo:</h2>
 <ul>
 <li>
 I made this a separate entry because this happened just yesterday. After finally getting the camera working, I wanted to try driving the car with video. But back when I         was mounting stuff onto the plywood and plugging everything back in, I accidentally plugged the power and ground that connect the servo to power in reverse. So when I           turned the ESC on it burnt up, so now I can't drive the car. Luckily I tested the servo and it was fine, but the Traxxas XL5 ESCs are expensive. What an annoying mistake. And burnt electronics smell awful.
